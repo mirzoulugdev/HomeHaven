@@ -5,4 +5,6 @@ class AppRouterNames {
   static String login = '/login';
   static String pageView = '/pageView';
   static String cartDetails = '/cartDetails';
+  static String cart = '/cart';
+  static String profile = '/profile';
 }

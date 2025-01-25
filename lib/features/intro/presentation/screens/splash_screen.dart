@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
+
 import '../../../../core/routes/app_router_names.dart';
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_icons.dart';
@@ -13,7 +14,7 @@ class SplashScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: FutureBuilder(
-          future: Future.delayed(Duration(seconds: 5)).then(
+          future: Future.delayed(Duration(seconds: 3)).then(
             (value) => context.go(AppRouterNames.pageView),
           ),
           builder: (context, snapshot) {

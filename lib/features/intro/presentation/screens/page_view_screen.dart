@@ -3,7 +3,7 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
-import 'package:home_haven/core/routes/app_router_names.dart';
+import '../../../../core/routes/app_router_names.dart';
 import '../../../../core/utils/app_colors.dart';
 import '../widgets/onboarding_widget1.dart';
 import '../widgets/onboarding_widget2.dart';
@@ -31,7 +31,7 @@ class _PageViewScreenState extends State<PageViewScreen> {
             child: PageView(
               onPageChanged: (value) {
                 if (_currentIndex == 2) {
-                  context.go(AppRouterNames.register);
+                  context.go(AppRouterNames.login);
                 }
                 setState(() {
                   _currentIndex = value;
@@ -58,10 +58,10 @@ class _PageViewScreenState extends State<PageViewScreen> {
                 count: 3, // Number of pages
               ),
             ),
-          ElevatedButton(
-            onPressed: () {
+          GestureDetector(
+            onTap: () {
               if (_currentIndex == 2) {
-                context.go(AppRouterNames.register);
+                context.go(AppRouterNames.login);
               }
               log(_currentIndex.toString());
               pageViewController.nextPage(
@@ -69,23 +69,22 @@ class _PageViewScreenState extends State<PageViewScreen> {
                 curve: Curves.easeIn,
               );
             },
-            style: ElevatedButton.styleFrom(
-              backgroundColor: AppColors.mainColor,
-              padding: const EdgeInsets.symmetric(
-                horizontal: 150,
-                vertical: 10,
-              ),
-              shape: RoundedRectangleBorder(
+            child: Container(
+              alignment: Alignment.center,
+              width: 300.w,
+              height: 50.h,
+              decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10.r),
+                color: AppColors.mainColor,
               ),
-            ),
-            child: Text(
-              "Next",
-              style: TextStyle(
-                fontSize: 16.sp,
-                fontFamily: "Inter",
-                fontWeight: FontWeight.w700,
-                color: AppColors.whiteColor,
+              child: Text(
+                "Next",
+                style: TextStyle(
+                  fontSize: 16.sp,
+                  fontFamily: "Inter",
+                  fontWeight: FontWeight.w700,
+                  color: AppColors.whiteColor,
+                ),
               ),
             ),
           ),

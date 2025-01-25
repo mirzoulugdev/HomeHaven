@@ -12,4 +12,8 @@ class AppIcons {
   static const email = "$basePath/email.svg";
   static const google = "$basePath/google.svg";
   static const facebook = "$basePath/facebook.svg";
+  static const transaction = '$basePath/transaction.svg';
+  static const saved = "$basePath/saved.svg";
+  static const payment = "$basePath/payment.svg";
+  static const edit = "$basePath/edit.svg";
 }
